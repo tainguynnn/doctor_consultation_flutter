@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196006853006",
+    "project_id": "example-firebase-e16b8",
+    "storage_bucket": "example-firebase-e16b8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196006853006:android:c4f5dbb70975087e860cdf",
+        "android_client_info": {
+          "package_name": "com.example.telekonsul"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARN-YqhAp5s6MZ7u5us2hprVlpehYcfUc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
