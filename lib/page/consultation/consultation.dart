@@ -213,7 +213,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
 
     if (konfirmasi) {
       // WhatsApp deeplink, for redirecting to WhatsApp
-      String _url = "https://api.whatsapp.com/send?phone=${queue.transactionData!.createdBy!.phoneNumber}";
+      String _url = "https://zalo.me/${queue.transactionData!.createdBy!.phoneNumber}";
 
       await canLaunchUrlString(_url)
           ? await launchUrlString(
