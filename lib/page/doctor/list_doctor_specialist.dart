@@ -51,7 +51,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
 
             if (value.listSpecialistDoctor.isEmpty) {
               return const Center(
-                child: Text("There's no doctor available today"),
+                child: Text("Không có bác sĩ khả dụng hôm nay"),
               );
             }
 
@@ -63,7 +63,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
                   const Toolbar(),
                   const SizedBox(height: 16.0),
                   Text(
-                    "List ${widget.specialist}",
+                    "Danh sách ${widget.specialist}",
                     style: const TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 8.0),
@@ -89,7 +89,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      hintText: "Search Doctor",
+                      hintText: "Tìm Bác Sĩ",
                     ),
                     onChanged: (query) {
                       if (query.isEmpty || query == "") {
@@ -222,7 +222,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
                           ),
                           child: const Center(
                             child: Text(
-                              "Consulting",
+                              "Đang Tư Vấn",
                               style: TextStyle(fontWeight: FontWeight.w900, color: Colors.black),
                             ),
                           ),
@@ -237,7 +237,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
                               ),
                               child: const Center(
                                 child: Text(
-                                  "BOOKED",
+                                  "Đã Đặt",
                                   style: TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
                                 ),
                               ),
@@ -261,7 +261,7 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
                                 },
                                 child: const Center(
                                   child: Text(
-                                    "BOOK",
+                                    "Đặt",
                                     style: TextStyle(fontWeight: FontWeight.w900, color: Colors.white),
                                   ),
                                 ),

@@ -41,7 +41,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                 Expanded(
                   flex: 2,
                   child: Text(
-                    "Transaction ID #${queue.transactionData!.docId}",
+                    "Mã giao dịch #${queue.transactionData!.docId}",
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                     ),
@@ -135,7 +135,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                 ),
                                 color: AppTheme.darkerPrimaryColor,
                                 child: const Text(
-                                  "Consultation has ended",
+                                  "Đã kết thúc tư vấn",
                                   style: TextStyle(color: Colors.white),
                                 ),
                                 onPressed: () async {
@@ -149,7 +149,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                     ),
                                     color: AppTheme.dangerColor,
                                     child: const Text(
-                                      "Finish Consultation",
+                                      "kết thúc tư vấn",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     onPressed: () async {
@@ -169,7 +169,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
                                     ),
                                     color: AppTheme.primaryColor,
                                     child: const Text(
-                                      "Start Consultation",
+                                      "Bắt đầu tư vấn",
                                       style: TextStyle(color: Colors.white),
                                     ),
                                     onPressed: () async {
@@ -196,16 +196,16 @@ class _ConsultationPageState extends State<ConsultationPage> {
     bool konfirmasi = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Are you sure want to start?"),
-        content: const Text("You will be directed to WhatsApp, to start consulting with patient"),
+        title: const Text("Bạn có muốn bắt đầu tư vấn?"),
+        content: const Text("Bạn sẽ được chuyển đến Zalo để bắt đầu tư vấn"),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(true),
-            child: const Text("Yes"),
+            child: const Text("Đồng ý"),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: const Text("Cancel"),
+            child: const Text("Huỷ"),
           ),
         ],
       ),
@@ -220,7 +220,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
               _url,
               mode: LaunchMode.externalApplication,
             )
-          : throw 'Could not launch $_url';
+          : throw 'Không thể bắt đầu $_url';
 
       Doctor newData = currentDoctor!;
       newData.isBusy = true;
@@ -235,16 +235,16 @@ class _ConsultationPageState extends State<ConsultationPage> {
     bool konfirmasi = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text("Are you sure want to finish this consultation?"),
-        content: const Text("When the consultation is done, you'll asked to report patient diagnosis"),
+        title: const Text("Bạn có muốn kết thúc tư vấn?"),
+        content: const Text("Khi hết thúc tư vấn, hãy đưa ra chẩn đoán của bạn"),
         actions: [
           ElevatedButton(
             onPressed: () => Navigator.of(context).pop(true),
-            child: const Text("Yes"),
+            child: const Text("Đồng ý"),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
-            child: const Text("Cancel"),
+            child: const Text("Huỷ"),
           ),
         ],
       ),
@@ -267,15 +267,15 @@ class _ConsultationPageState extends State<ConsultationPage> {
       String? diagnosis = await showDialog(
         context: context,
         builder: (context) => AlertDialog(
-          title: const Text("Diagnosis Patient"),
+          title: const Text("Chẩn đoán"),
           content: TextField(
             controller: _txtDiagnosis,
-            decoration: const InputDecoration(hintText: "Diagnosis Patient"),
+            decoration: const InputDecoration(hintText: "Chẩn đoán"),
           ),
           actions: [
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(_txtDiagnosis.text),
-              child: const Text("Done"),
+              child: const Text("Hoàn Tất"),
             ),
           ],
         ),

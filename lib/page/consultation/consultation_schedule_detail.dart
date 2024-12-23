@@ -16,31 +16,31 @@ class _ConsultationScheduleDetailState
 
   final List<DaySchedule> _day = [
     DaySchedule(
-      'Monday',
+      'Thứ hai',
       1,
     ),
     DaySchedule(
-      'Tuesday',
+      'Thứ ba',
       2,
     ),
     DaySchedule(
-      'Wednesday',
+      'Thứ tư',
       3,
     ),
     DaySchedule(
-      'Thursday',
+      'Thứ năm',
       4,
     ),
     DaySchedule(
-      'Friday',
+      'Thứ sáu',
       5,
     ),
     DaySchedule(
-      'Saturday',
+      'Thứ bảy',
       6,
     ),
     DaySchedule(
-      'Sunday',
+      'Chủ nhật',
       7,
     ),
   ];
@@ -111,7 +111,7 @@ class _ConsultationScheduleDetailState
                             child: Padding(
                               padding: EdgeInsets.all(16.0),
                               child: Text(
-                                "Constultation Schedule Detail",
+                                "Chi tiết lịch tư vấn",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -138,7 +138,7 @@ class _ConsultationScheduleDetailState
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  const Text("Pick Day"),
+                                  const Text("Chọn ngày"),
                                   const SizedBox(height: 4.0),
                                   Card(
                                     shape: RoundedRectangleBorder(
@@ -161,7 +161,7 @@ class _ConsultationScheduleDetailState
                                     ),
                                   ),
                                   const SizedBox(height: 12.0),
-                                  const Text("Time"),
+                                  const Text("thời gian"),
                                   const SizedBox(height: 4.0),
                                   MaterialButton(
                                     color: AppTheme.secondaryColor,
@@ -174,10 +174,10 @@ class _ConsultationScheduleDetailState
                                     child: _startTime != null
                                         ? Text(
                                             "${_startTime!.format(context)} - ${_endTime!.format(context)}")
-                                        : const Text("Pick Time"),
+                                        : const Text("Chọn thời gian"),
                                   ),
                                   const SizedBox(height: 12.0),
-                                  const Text("Price"),
+                                  const Text("Giá"),
                                   const SizedBox(height: 4.0),
                                   TextFormField(
                                     focusNode: _fnPrice,
@@ -195,14 +195,14 @@ class _ConsultationScheduleDetailState
                                       filled: true,
                                       counterText: "",
                                       fillColor: Colors.white,
-                                      hintText: 'Price',
+                                      hintText: 'Giá',
                                       errorStyle: const TextStyle(
                                         color: Colors.amber,
                                       ),
                                     ),
                                     validator: (value) {
                                       if (value!.isEmpty) {
-                                        return 'You must fill this field';
+                                        return 'không được để trống';
                                       }
 
                                       return null;
@@ -233,7 +233,7 @@ class _ConsultationScheduleDetailState
                                                       _isLoading = false;
                                                     });
                                                   },
-                                                  child: const Text("Delete"),
+                                                  child: const Text("Xoá"),
                                                   color: AppTheme.dangerColor,
                                                   textColor: Colors.white,
                                                   shape: RoundedRectangleBorder(
@@ -253,7 +253,7 @@ class _ConsultationScheduleDetailState
                                                       _isLoading = false;
                                                     });
                                                   },
-                                                  child: const Text("Update"),
+                                                  child: const Text("Cập nhật"),
                                                   color: AppTheme
                                                       .lighterSecondaryColor,
                                                   textColor: Colors.black,
@@ -320,7 +320,7 @@ class _ConsultationScheduleDetailState
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text("Update success"),
+        content: Text("Cập nhật thành công"),
       ),
     );
 
@@ -336,7 +336,7 @@ class _ConsultationScheduleDetailState
 
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
-        content: Text("Delete success"),
+        content: Text("Xoá thành công"),
       ),
     );
 

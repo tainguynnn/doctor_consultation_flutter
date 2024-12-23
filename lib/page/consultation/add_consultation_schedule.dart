@@ -11,31 +11,31 @@ class AddConsultationSchedule extends StatefulWidget {
 class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
   final List<DaySchedule> _day = [
     DaySchedule(
-      'Monday',
+      'Thứ hai',
       1,
     ),
     DaySchedule(
-      'Tuesday',
+      'Thứ ba',
       2,
     ),
     DaySchedule(
-      'Wednesday',
+      'Thứ tư',
       3,
     ),
     DaySchedule(
-      'Thursday',
+      'Thứ năm',
       4,
     ),
     DaySchedule(
-      'Friday',
+      'Thứ sáu',
       5,
     ),
     DaySchedule(
-      'Saturday',
+      'Thứ bảy',
       6,
     ),
     DaySchedule(
-      'Sunday',
+      'Chủ nhật',
       7,
     ),
   ];
@@ -60,7 +60,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
       if (pickedTime.hour == 23 && pickedTime.minute >= 29) {
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
-            content: Text("You musn't pick time past 23:29, because schedule are automatically added 30min on start time, so if it past 23:29 it will fall on tommorow"),
+            content: Text("Vui lòng chọn thời gian tư vấn trước 23:59"),
             duration: Duration(seconds: 7),
             dismissDirection: DismissDirection.horizontal,
           ),
@@ -109,7 +109,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                           child: Padding(
                             padding: EdgeInsets.all(16.0),
                             child: Text(
-                              "Add Consultation Schedule",
+                              "Thêm lịch tư vấn",
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -136,7 +136,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
-                                const Text("Pick day"),
+                                const Text("Chọn ngày"),
                                 const SizedBox(height: 4.0),
                                 Card(
                                   shape: RoundedRectangleBorder(
@@ -159,7 +159,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                                   ),
                                 ),
                                 const SizedBox(height: 12.0),
-                                const Text("Time"),
+                                const Text("thời gian"),
                                 const SizedBox(height: 4.0),
                                 MaterialButton(
                                   color: AppTheme.secondaryColor,
@@ -172,10 +172,10 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                                   child: _startTime != null
                                       ? Text(
                                           "${_startTime!.format(context)} - ${_endTime.format(context)}")
-                                      : const Text("Pick Time"),
+                                      : const Text("chọn thời gian"),
                                 ),
                                 const SizedBox(height: 12.0),
-                                const Text("Price"),
+                                const Text("giá"),
                                 const SizedBox(height: 4.0),
                                 TextFormField(
                                   focusNode: _fnPrice,
@@ -193,14 +193,14 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                                     filled: true,
                                     counterText: "",
                                     fillColor: Colors.white,
-                                    hintText: 'Price',
+                                    hintText: 'giá',
                                     errorStyle: const TextStyle(
                                       color: Colors.amber,
                                     ),
                                   ),
                                   validator: (value) {
                                     if (value!.isEmpty) {
-                                      return 'You must fill this field';
+                                      return 'hãy điền mọi trường';
                                     }
 
                                     return null;
@@ -229,7 +229,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
                                                 _isLoading = false;
                                               });
                                             },
-                                            child: const Text("Add Schedule"),
+                                            child: const Text("Thêm"),
                                             color:
                                                 AppTheme.lighterSecondaryColor,
                                             textColor: Colors.black,
@@ -275,7 +275,7 @@ class _AddConsultationScheduleState extends State<AddConsultationSchedule> {
     if (_startTime == null || _txtPrice.text == "") {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("You must fill all value"),
+          content: Text("hãy điền giá trị"),
         ),
       );
       return;

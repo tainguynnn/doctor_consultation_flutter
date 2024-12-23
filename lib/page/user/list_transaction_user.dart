@@ -72,7 +72,7 @@ class _ListTransactionUserState extends State<ListTransactionUser> {
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(8.0),
                       ),
-                      hintText: "Search transaction by status",
+                      hintText: "tìm kiếm giao dịch qua trạng thái",
                     ),
                     onChanged: (query) {
                       if (query.isEmpty || query == "") {
@@ -105,7 +105,7 @@ class _ListTransactionUserState extends State<ListTransactionUser> {
                   const SizedBox(height: 16.0),
                   _isEmpty
                       ? const Center(
-                          child: Text("Search result empty"),
+                          child: Text("trống"),
                         )
                       : Expanded(
                           child: _searchResult.isNotEmpty && _controller.text.isNotEmpty
@@ -159,7 +159,7 @@ class _ListTransactionUserState extends State<ListTransactionUser> {
                   Expanded(
                     flex: 2,
                     child: Text(
-                      "Transaction ID #${item.docId}",
+                      "Mã giao dịch #${item.docId}",
                       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     ),
                   ),

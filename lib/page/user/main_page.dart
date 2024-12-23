@@ -147,11 +147,11 @@ class _MainPageState extends State<MainPage> {
                     child: Row(
                       children: [
                         _buildDoctorSpecialist(
-                          specialist: "General practitioners",
+                          specialist: "Đa Khoa",
                           imgAsset: 'assets/general_practitioners.png',
                         ),
                         _buildDoctorSpecialist(
-                          specialist: "Surgeon",
+                          specialist: "Nội Khoa",
                           imgAsset: 'assets/surgeon.png',
                         ),
                         _buildDoctorSpecialist(

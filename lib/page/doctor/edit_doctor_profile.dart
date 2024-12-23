@@ -17,11 +17,11 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
 
   String _genderValue = 'Male';
 
-  String? selectedSpecialist = "General practitioners";
+  String? selectedSpecialist = "Đa Khoa";
   List<String> specialist = [
-    "General practitioners",
-    "Surgeon",
-    "Dentist",
+    "Đa Khoa",
+    "Nội Khoa",
+    "Nha Sĩ",
   ];
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -275,7 +275,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                     ),
                                     const SizedBox(height: 16),
                                     const Text(
-                                      "Gender",
+                                      "Giới tính",
                                     ),
                                     const SizedBox(height: 4),
                                     Row(
@@ -356,7 +356,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                         }
 
                                         if (value.length <= 9) {
-                                          return 'Must more than 9 char';
+                                          return 'phải nhiều hơn 9 chữ số';
                                         }
 
                                         return null;
@@ -387,13 +387,13 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
 
                                                   ScaffoldMessenger.of(context).showSnackBar(
                                                     const SnackBar(
-                                                      content: Text("Edit Profile Success"),
+                                                      content: Text("Thay đổi hồ sơ thành công"),
                                                     ),
                                                   );
 
                                                   Navigator.of(context).pop();
                                                 },
-                                                child: const Text("Edit Profile"),
+                                                child: const Text("Thay đổi hồ sơ"),
                                                 color: AppTheme.secondaryColor,
                                                 textColor: Colors.black,
                                                 minWidth: MediaQuery.of(context).size.width * 0.3,
@@ -436,7 +436,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("You must choose gender"),
+          content: Text("Hãy chọn giới tính"),
         ),
       );
       return;
@@ -448,7 +448,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
       });
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("You must choose Specialist"),
+          content: Text("Hãy chọn chuyên khoa"),
         ),
       );
       return;
@@ -475,7 +475,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("Something went wrong"),
+          content: Text("đã xảy ra lỗi"),
         ),
       );
       setState(() {

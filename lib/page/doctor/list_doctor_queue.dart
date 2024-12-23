@@ -30,7 +30,7 @@ class _ListDoctorQueueState extends State<ListDoctorQueue> {
 
           if (value.listAllQueue.isEmpty) {
             return const Center(
-              child: Text("There's no queue today"),
+              child: Text("không có lịch hôm nay"),
             );
           }
 

@@ -34,7 +34,7 @@ class _TransactionDetailState extends State<TransactionDetail> {
                     Expanded(
                       flex: 2,
                       child: Text(
-                        "Transaction ID #${transaction.docId}",
+                        "Mã giao dịch #${transaction.docId}",
                         style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                       ),
                     ),
@@ -165,7 +165,7 @@ class _TransactionDetailState extends State<TransactionDetail> {
                                   ),
                                   color: AppTheme.primaryColor,
                                   child: const Text(
-                                    "Confirm Payment",
+                                    "Xác nhận giao dịch",
                                     style: TextStyle(color: Colors.white, fontSize: 12),
                                   ),
                                   onPressed: () async {
@@ -214,7 +214,7 @@ class _TransactionDetailState extends State<TransactionDetail> {
                           decoration: BoxDecoration(color: const Color(0xffE0E0E0), borderRadius: BorderRadius.circular(20)),
                           child: const Center(
                             child: Text(
-                              "Please wait for the Doctor to contact\nYou via WhatsApp. Make sure your WhatsApp\nalways on!",
+                              "Bác sĩ sẽ liên lạc với bạn qua Zalo. \n Vui lòng tải trước ứng dụng Zalo!",
                               textAlign: TextAlign.center,
                               style: TextStyle(fontSize: 12),
                             ),

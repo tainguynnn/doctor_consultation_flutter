@@ -49,7 +49,7 @@ class _ListDoctorTransactionState extends State<ListDoctorTransaction> {
 
             if (value.listTransaction.isEmpty) {
               return const Center(
-                child: Text("You never done any transaction"),
+                child: Text("Chưa có giao dịch"),
               );
             }
 
@@ -273,7 +273,7 @@ class _ListDoctorTransactionState extends State<ListDoctorTransaction> {
                   Expanded(
                     flex: 2,
                     child: Text(
-                      "Transaction ID #${item.docId}",
+                      "Mã giao dịch  #${item.docId}",
                       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w800),
                     ),
                   ),

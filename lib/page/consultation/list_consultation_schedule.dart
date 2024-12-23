@@ -30,7 +30,7 @@ class _ListConsultationScheduleState extends State<ListConsultationSchedule> {
 
           if (value.listConsultationSchedule.isEmpty) {
             return const Center(
-              child: Text("Your consultation schedule is empty, start to create one"),
+              child: Text("Lịch tư vấn của bạn đang trống"),
             );
           }
 

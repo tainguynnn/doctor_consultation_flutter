@@ -179,7 +179,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: const Text("Take Picture From"),
+          title: const Text("Chọn ảnh từ"),
           content: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -208,7 +208,7 @@ class _DoctorProfileState extends State<DoctorProfile> {
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
-              child: const Text("Cancel"),
+              child: const Text("Huỷ"),
             )
           ],
         );

@@ -118,7 +118,7 @@ class _ConsultationDetailState extends State<ConsultationDetail> {
                       children: [
                         const SizedBox(width: 22),
                         const Text(
-                          "Price :",
+                          "giá :",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                           ),
@@ -150,7 +150,7 @@ class _ConsultationDetailState extends State<ConsultationDetail> {
                                 if (transactionData != null) {
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     const SnackBar(
-                                      content: Text("Transaction Sucessfully Created!"),
+                                      content: Text("Giao dịch được thêm thành công!"),
                                     ),
                                   );
                                   Navigator.of(context).pushReplacement(
@@ -225,7 +225,7 @@ class _ConsultationDetailState extends State<ConsultationDetail> {
     if (newTransaction == null) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
-          content: Text("Something went wrong"),
+          content: Text("Đã xảy ra lỗi"),
         ),
       );
       return null;

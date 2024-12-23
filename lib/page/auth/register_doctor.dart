@@ -14,10 +14,10 @@ class _RegisterDoctorPageState extends State<RegisterDoctorPage> {
 
   String _genderValue = 'Male';
 
-  String? selectedSpecialist = "General practitioners";
+  String? selectedSpecialist = "Đa Khoa";
   List<String> specialist = [
-    "General practitioners",
-    "Surgeon",
+    "Đa Khoa",
+    "Nội Khoa",
     "Nha Sĩ",
   ];
 
