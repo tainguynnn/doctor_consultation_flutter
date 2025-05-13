@@ -1,0 +1,2 @@
+E:/workspace/doctor_consultation-master/doctor_consultation-master/android/app/.cxx/Debug/21t54145/x86_64/CMakeFiles/edit_cache.dir
+E:/workspace/doctor_consultation-master/doctor_consultation-master/android/app/.cxx/Debug/21t54145/x86_64/CMakeFiles/rebuild_cache.dir

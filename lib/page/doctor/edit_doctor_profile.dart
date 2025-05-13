@@ -283,7 +283,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                         Radio(
                                           value: 0,
                                           groupValue: _radioValue,
-                                          fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                                          fillColor: WidgetStateColor.resolveWith((states) => Colors.white),
                                           onChanged: _handleRadioValueChange,
                                         ),
                                         const Text(
@@ -292,7 +292,7 @@ class _EditDoctorProfileState extends State<EditDoctorProfile> {
                                         Radio(
                                           value: 1,
                                           groupValue: _radioValue,
-                                          fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                                          fillColor: WidgetStateColor.resolveWith((states) => Colors.white),
                                           onChanged: _handleRadioValueChange,
                                         ),
                                         const Text(

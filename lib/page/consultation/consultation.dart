@@ -193,7 +193,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
   }
 
   _startConsulting() async {
-    bool konfirmasi = await showDialog(
+    bool confirmation = await showDialog(
       context: context,
       builder: (context) => AlertDialog(
         title: const Text("Bạn có muốn bắt đầu tư vấn?"),
@@ -211,7 +211,7 @@ class _ConsultationPageState extends State<ConsultationPage> {
       ),
     );
 
-    if (konfirmasi) {
+    if (confirmation) {
       // WhatsApp deeplink, for redirecting to WhatsApp
       String _url = "https://zalo.me/${queue.transactionData!.createdBy!.phoneNumber}";
 

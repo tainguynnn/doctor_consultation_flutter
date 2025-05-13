@@ -420,45 +420,47 @@ class _TransactionDetailState extends State<TransactionDetail> {
     return;
   }
 
-  _cropImage() async {
-    CroppedFile? croppedFile = await ImageCropper().cropImage(
-      sourcePath: imageFile!.path,
-      aspectRatioPresets: Platform.isAndroid
-          ? [
-              CropAspectRatioPreset.square,
-              CropAspectRatioPreset.ratio3x2,
-              CropAspectRatioPreset.original,
-              CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPreset.ratio16x9
-            ]
-          : [
-              CropAspectRatioPreset.original,
-              CropAspectRatioPreset.square,
-              CropAspectRatioPreset.ratio3x2,
-              CropAspectRatioPreset.ratio4x3,
-              CropAspectRatioPreset.ratio5x3,
-              CropAspectRatioPreset.ratio5x4,
-              CropAspectRatioPreset.ratio7x5,
-              CropAspectRatioPreset.ratio16x9
-            ],
-      uiSettings: [
-        AndroidUiSettings(
-            toolbarTitle: 'Cropper',
-            toolbarColor: Colors.deepOrange,
-            toolbarWidgetColor: Colors.white,
-            initAspectRatio: CropAspectRatioPreset.original,
-            lockAspectRatio: false),
-        IOSUiSettings(
-          title: 'Cropper',
-        ),
-      ],
-    );
-    if (croppedFile != null) {
-      setState(() {
-        imageFile = File(croppedFile.path);
-      });
-    }
+_cropImage() async {
+  // Ensure imageFile is not null before proceeding
+  if (imageFile == null) {
+    print("imageFile is null, cannot crop.");
+    return;
   }
+
+  CroppedFile? croppedFile = await ImageCropper().cropImage(
+    sourcePath: imageFile!.path, // You have a null check above, but keep ! if you are certain elsewhere
+    
+
+    uiSettings: [ // Keep this section
+      AndroidUiSettings(
+          toolbarTitle: 'Cropper',
+          toolbarColor: Colors.deepOrange,
+          toolbarWidgetColor: Colors.white,
+          // initAspectRatio sets the initial crop ratio when the UI opens.
+          initAspectRatio: CropAspectRatioPreset.original,
+          // lockAspectRatio = false allows the user to choose other aspect ratios.
+          // If set to true, the user would be stuck with initAspectRatio.
+          lockAspectRatio: false),
+      IOSUiSettings(
+          title: 'Cropper',
+          // You can configure iOS aspect ratio behavior here too.
+          // For example, to allow the user to change ratios:
+          aspectRatioLockEnabled: false,
+          // To show the button that lets users pick ratios:
+          aspectRatioPickerButtonHidden: false,
+          // Check the IOSUiSettings documentation for more options.
+          ),
+    ],
+  );
+
+  if (croppedFile != null) {
+    setState(() {
+      // Update your imageFile state with the cropped file
+      imageFile = File(croppedFile.path);
+    });
+  }
+}
+
 
   _updateBuktiPembayaran() async {
   if (imageFile == null) {

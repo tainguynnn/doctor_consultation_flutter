@@ -319,7 +319,7 @@ class _RegisterDoctorPageState extends State<RegisterDoctorPage> {
                                       value: 0,
                                       groupValue: _radioValue,
                                       onChanged: _handleRadioValueChange,
-                                      fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                                      fillColor: WidgetStateColor.resolveWith((states) => Colors.white),
                                     ),
                                     const Text(
                                       'Nam',
@@ -329,7 +329,7 @@ class _RegisterDoctorPageState extends State<RegisterDoctorPage> {
                                       value: 1,
                                       groupValue: _radioValue,
                                       onChanged: _handleRadioValueChange,
-                                      fillColor: MaterialStateColor.resolveWith((states) => Colors.white),
+                                      fillColor: WidgetStateColor.resolveWith((states) => Colors.white),
                                     ),
                                     const Text(
                                       'Nữ',

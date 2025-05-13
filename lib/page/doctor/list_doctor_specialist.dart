@@ -37,8 +37,12 @@ class _ListDoctorSpecialistState extends State<ListDoctorSpecialist> {
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (value) async {
-        context.read<DoctorProvider>().setLoadingSpecialist = true;
+      onPopInvokedWithResult: (bool didPop, Object? result) async {
+        // Your existing logic likely only cares if the pop happened (didPop is true)
+        // You don't need to use the 'result' parameter if your logic doesn't depend on it.
+        if (didPop) { // It's good practice to check didPop
+           context.read<DoctorProvider>().setLoadingSpecialist = true;
+        }
       },
       child: Scaffold(
         body: Consumer<DoctorProvider>(

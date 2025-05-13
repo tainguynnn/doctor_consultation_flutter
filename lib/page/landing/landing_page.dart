@@ -89,7 +89,7 @@ class _LandingPageState extends State<LandingPage> {
                               onChanged: (dynamic value) => setState(() {
                                 _isDokter = value;
                               }),
-                              fillColor: MaterialStateColor.resolveWith(
+                              fillColor: WidgetStateColor.resolveWith(
                                   (states) => Colors.white),
                             ),
                             const Text(
@@ -104,7 +104,7 @@ class _LandingPageState extends State<LandingPage> {
                               onChanged: (dynamic value) => setState(() {
                                 _isDokter = value;
                               }),
-                              fillColor: MaterialStateColor.resolveWith(
+                              fillColor: WidgetStateColor.resolveWith(
                                   (states) => Colors.white),
                             ),
                             const Text(
